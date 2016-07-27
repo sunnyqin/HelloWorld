@@ -1,12 +1,12 @@
 language: objective-c
 before_script:
-- "./scripts/add-key.sh"
 - openssl aes-256-cbc -k "$ENCRYPTION_SECRET" -in scripts/profile/helloworld_inhouse.mobileprovision.enc
   -d -a -out scripts/profile/helloworld_inhouse.mobileprovision
 - openssl aes-256-cbc -k "$ENCRYPTION_SECRET" -in scripts/certs/dist.cer.enc -d -a
   -out scripts/certs/dist.cer
 - openssl aes-256-cbc -k "$ENCRYPTION_SECRET" -in scripts/certs/dist.p12.enc -d -a
   -out scripts/certs/dist.p12
+  - "./scripts/add-key.sh"
 script:
 - xctool -workspace HelloWorld.xcworkspace -scheme HelloWorld -sdk iphonesimulator
   ONLY_ACTIVE_ARCH=NO
