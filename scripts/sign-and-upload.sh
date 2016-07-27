@@ -10,7 +10,7 @@ if [[ "$TRAVIS_BRANCH" != "staging" ]]; then
 fi
 
 PROVISIONING_PROFILE="$HOME/Library/MobileDevice/Provisioning Profiles/$PROFILE_NAME.mobileprovision"
-OUTPUTDIR="$PWD/build/Release-iphoneos"
+OUTPUTDIR="$PWD/build/Beta-iphoneos"
 RELEASE_DATE=`date '+%Y-%m-%d %H:%M:%S'`
 RELEASE_NOTES="Build: $TRAVIS_BUILD_NUMBER\nUploaded: $RELEASE_DATE"
 
