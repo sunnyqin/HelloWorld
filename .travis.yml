@@ -1,4 +1,8 @@
 language: objective-c
+before_install:
+- chmod +x scripts/add-key.sh
+- chmod +x scripts/sign-and-upload.sh
+- chmod +x scripts/remove-key.sh
 before_script:
 - "./scripts/add-key.sh"
 script:
