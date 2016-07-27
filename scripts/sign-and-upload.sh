@@ -13,7 +13,15 @@ OUTPUTDIR="$PWD/build/Release-iphoneos"
 RELEASE_DATE=`date '+%Y-%m-%d %H:%M:%S'`
 RELEASE_NOTES="Build: $TRAVIS_BUILD_NUMBER\nUploaded: $RELEASE_DATE"
 
+echo "********************"
+echo "*     Signing      *"
+echo "********************"
+
 xcrun -log -sdk iphoneos PackageApplication "$OUTPUTDIR/$APP_NAME.app" -o "$OUTPUTDIR/$APP_NAME.ipa" -sign "$DEVELOPER_NAME" -embed "$PROVISIONING_PROFILE"
+
+echo "********************"
+echo "*    Uploading     *"
+echo "********************"
 
 curl https://rink.hockeyapp.net/api/2/apps/$HOCKEY_APP_ID/app_versions \
   -F status="2" \
