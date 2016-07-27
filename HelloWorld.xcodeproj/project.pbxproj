@@ -14,6 +14,7 @@
 		E91A5A6F1D472D1500E8328B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E91A5A6D1D472D1500E8328B /* Main.storyboard */; };
 		E91A5A711D472D1500E8328B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E91A5A701D472D1500E8328B /* Assets.xcassets */; };
 		E91A5A741D472D1500E8328B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E91A5A721D472D1500E8328B /* LaunchScreen.storyboard */; };
+		E9BC07B51D48FDFC00FF4EF7 /* helloworld_beta_inhouse.mobileprovision in Resources */ = {isa = PBXBuildFile; fileRef = E9BC07B41D48FDFC00FF4EF7 /* helloworld_beta_inhouse.mobileprovision */; };
 		E9EC59EE1D4869F500A52938 /* add-key.sh in Resources */ = {isa = PBXBuildFile; fileRef = E9EC59E51D4869F500A52938 /* add-key.sh */; };
 		E9EC59EF1D4869F500A52938 /* Apple.cer in Resources */ = {isa = PBXBuildFile; fileRef = E9EC59E71D4869F500A52938 /* Apple.cer */; };
 		E9EC59F01D4869F500A52938 /* dist.cer.enc in Resources */ = {isa = PBXBuildFile; fileRef = E9EC59E81D4869F500A52938 /* dist.cer.enc */; };
@@ -41,6 +42,7 @@
 		E91A5A701D472D1500E8328B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E91A5A731D472D1500E8328B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E91A5A751D472D1500E8328B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E9BC07B41D48FDFC00FF4EF7 /* helloworld_beta_inhouse.mobileprovision */ = {isa = PBXFileReference; lastKnownFileType = file; path = helloworld_beta_inhouse.mobileprovision; sourceTree = "<group>"; };
 		E9EC59E51D4869F500A52938 /* add-key.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "add-key.sh"; sourceTree = "<group>"; };
 		E9EC59E71D4869F500A52938 /* Apple.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = Apple.cer; sourceTree = "<group>"; };
 		E9EC59E81D4869F500A52938 /* dist.cer.enc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dist.cer.enc; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 		E9EC59EA1D4869F500A52938 /* profile */ = {
 			isa = PBXGroup;
 			children = (
+				E9BC07B41D48FDFC00FF4EF7 /* helloworld_beta_inhouse.mobileprovision */,
 				E9EC59F91D4871D300A52938 /* helloworld_inhouse.mobileprovision */,
 				E9EC59EB1D4869F500A52938 /* helloworld_inhouse.mobileprovision.enc */,
 			);
@@ -222,6 +225,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E9EC59EF1D4869F500A52938 /* Apple.cer in Resources */,
+				E9BC07B51D48FDFC00FF4EF7 /* helloworld_beta_inhouse.mobileprovision in Resources */,
 				E91A5A741D472D1500E8328B /* LaunchScreen.storyboard in Resources */,
 				E9EC59F01D4869F500A52938 /* dist.cer.enc in Resources */,
 				E9EC59F71D4871CC00A52938 /* dist.cer in Resources */,
@@ -422,14 +426,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				CODE_SIGN_RESOURCE_RULES_PATH = "$(SDKROOT)/ResourceRules.plist";
+				CODE_SIGN_RESOURCE_RULES_PATH = "";
 				INFOPLIST_FILE = HelloWorld/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MY_CRASHLYTICS_API_KEY = d1735a5902bb0852d662b1917c4f691cfc391c5c;
 				MY_CRASHLYTICS_BUILD_SECRET = 2fa52a54d0c2cbf8b079374579123798cba998c9e2a441ba7e95b79c542d99ae;
-				PRODUCT_BUNDLE_IDENTIFIER = co.ilabs.HelloWorld;
+				PRODUCT_BUNDLE_IDENTIFIER = "co.ilabs.HelloWorld-beta";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "a80d16df-c1bc-453b-aea3-c9440c50aabb";
+				PROVISIONING_PROFILE = "59f87e3d-279a-482b-9401-360c51216dd8";
 			};
 			name = Debug;
 		};
@@ -438,16 +442,16 @@
 			baseConfigurationReference = 17F8C886244813D829A14EF6 /* Pods-HelloWorld.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Interactive Labs, Inc.";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Interactive Labs, Inc.";
-				CODE_SIGN_RESOURCE_RULES_PATH = "$(SDKROOT)/ResourceRules.plist";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CODE_SIGN_RESOURCE_RULES_PATH = "";
 				INFOPLIST_FILE = HelloWorld/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MY_CRASHLYTICS_API_KEY = 0c31dbdd91674d7e38c2970702a8ed1296c2b427;
 				MY_CRASHLYTICS_BUILD_SECRET = 60c8c37aabf092fb185bb414226b3c778eb2f32c630ce3584780de36c08014e5;
 				PRODUCT_BUNDLE_IDENTIFIER = co.ilabs.HelloWorld;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "a80d16df-c1bc-453b-aea3-c9440c50aabb";
+				PROVISIONING_PROFILE = "59f87e3d-279a-482b-9401-360c51216dd8";
 			};
 			name = Release;
 		};
@@ -496,14 +500,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Interactive Labs, Inc.";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Interactive Labs, Inc.";
-				CODE_SIGN_RESOURCE_RULES_PATH = "$(SDKROOT)/ResourceRules.plist";
+				CODE_SIGN_RESOURCE_RULES_PATH = "";
 				INFOPLIST_FILE = HelloWorld/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MY_CRASHLYTICS_API_KEY = d1735a5902bb0852d662b1917c4f691cfc391c5c;
 				MY_CRASHLYTICS_BUILD_SECRET = 2fa52a54d0c2cbf8b079374579123798cba998c9e2a441ba7e95b79c542d99ae;
-				PRODUCT_BUNDLE_IDENTIFIER = co.ilabs.HelloWorld;
+				PRODUCT_BUNDLE_IDENTIFIER = "co.ilabs.HelloWorld-beta";
 				PRODUCT_NAME = "$(TARGET_NAME)-beta";
-				PROVISIONING_PROFILE = "a80d16df-c1bc-453b-aea3-c9440c50aabb";
+				PROVISIONING_PROFILE = "59f87e3d-279a-482b-9401-360c51216dd8";
 			};
 			name = Beta;
 		};
