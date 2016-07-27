@@ -2,8 +2,7 @@ language: objective-c
 before_script:
 - ./scripts/add-key.sh
 script:
-- xctool -workspace HelloWorld.xcworkspace -scheme HelloWorld -sdk iphonesimulator
-  ONLY_ACTIVE_ARCH=NO
+- xctool -workspace HelloWorld.xcworkspace -scheme HelloWorld -sdk iphoneos -configuration Release OBJROOT=$PWD/build SYMROOT=$PWD/build ONLY_ACTIVE_ARCH=NO
 after_success:
 - ./scripts/sign-and-upload.sh
 after_script:
