@@ -1,0 +1,13 @@
+.DS_Store
+xcuserdata/
+*.xccheckout
+*.xcworkspace
+Pods/
+InfoPlist.h
+node_modules
+*.ipa
+*.app.dSYM.zip
+.ruby-gemset
+.ruby-version
+*.swp
+*/.DS_Store
