@@ -2,8 +2,7 @@ language: objective-c
 before_script:
 - ./scripts/add-key.sh
 script:
-- xctool -workspace HelloWorld.xcworkspace -scheme HelloWorld -sdk iphonesimulator
-  ONLY_ACTIVE_ARCH=NO
+- xctool -workspace HelloWorld.xcworkspace -scheme HelloWorld -sdk iphoneos -configuration Release OBJROOT=$PWD/build SYMROOT=$PWD/build ONLY_ACTIVE_ARCH=NO CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
 after_success:
 - ./scripts/sign-and-upload.sh
 after_script:
@@ -15,7 +14,7 @@ xcode_sdk: iphonesimulator9.3
 env:
   global:
   - APP_NAME="HelloWorld"
-  - 'DEVELOPER_NAME="iPhone Distribution: Interactive Labs, Inc."'
+  - 'DEVELOPER_NAME="iPhone Distribution: Interactive Labs, Inc. (6AM6RAJ294)"'
   - PROFILE_NAME="helloworld_inhouse"
   - secure: pdy0BRfFrfi7b1RuG69EpAf2PYoZyfdKJNsrXgYD06jXTCsYYR9OtkZPp0mSQwa7AClFOMuxdGIF7fgjD1BkSt4/ABkrDX8yZPZIoIU0owL7a1Jjo7DPXDcTZTD5xJcOvl67M0HTzF6r/lcUBlBQnXbWHQcDhqJct2Ig80GOIijx+gUZvzoTaPOa+c2sEs3b5nxN9fZi6VGpVUHticUwxayPzS4roWXriLB5DZ+fIzYk8TxwUAPcNwy4rrqCeSRc64tC6VnLrfX/Bgk8obQnYaN8Q7FOBsQUHsOxMHZBtXpDntvT+csiRVaq2aT6tlu7651jNIG4ItPcDjuycZhkiA6QFJWMTxkGSjD23YfocK8p5UDdTYDJix0uMSFkEcPbJWaPIddGYZ9aCdzSQUvOeJ8aJW8RIjAyuE/QGL3O6+h4pO03gKQKvpTOehTnZOpWqm9Z+TiPAEwSkDH7fg8QzNF8IGNdmaTsLLX/4/LNjDXovJ4Z3RKzTHBgUJPrKmL+PXQIgndXz5XEVSYEhDPD0SqIxzLdjaGg/Mch32/FjkNyAUwOYqI253Rx3zZBQ0L4S+2r7Mk+5YOYBWW4CTGzlv55WpIjsuC5MFmx5XJkZ4UOTTaBUeQZR0WxGygzn9zlCMF1NtFuOstmFPd9K+gz/cbaMuOVPA6ky1h0Fz3kfmM=
   - secure: hcTXHzjTQFArGqVbEkCd7GJ8cNHLO8qRnEtz0sfHyLxkjMAhOPAkBeH9bX/hSMIuvH6TlJVqBQcEHtHdt40BlT+DRTAThMLStb41IawpWIIwvoZLt+VHVGtXSVkcpj6BxM4PLYSVBylD8MNk2AELpGseksm2M78t/xBLuzr0mb2Ae6PTOVv9A8WqahWMZOOGghunjWLK8iCQ25Zc0Z+OuM/6P67wqLECtZ/KeMhNn9k4w1yt0c29/BIo9Aux0jTirhqArLWFeZkMAXocliTEIhHrIfAKdMxuY+WCPWBKcxZWDfVHdxZm+g/RtYhFcbbMrSS+fs7JDQeM2ReqPtpAI4dDCDGeHSRs/PUE07GDfHCfDubxrQTPyfTCqCR8uxlttoE3HbwQAq22cmmMoFlh3AwWsT1HG5eyMQUSYrmCBAS7X0rCFFmiEy2F9iFf3l84CaSXrmFOWMmHwFXYf1fYMLR2hhhK8C2yLueeXcxtsvpx7xOVtHw28JT+ZeloxvSJNnlByMeGbX0Sy9f+sJ2CJUfQB4OyvYYbmv9Atq9QNV+dFcqqujVM3cXwPNeqj+ud+oBasE3d7F+P71wcXYFAm6bSLqF8lWeXDEIYbRC0YPZK4ty1/iC+gpBx+GT5ns58N0l8pj65grLS9Vc4QwbHJBc4jCO74CUHGiDI97hg+7o=
