@@ -20,6 +20,12 @@ echo "********************"
 xcrun -log -sdk iphoneos PackageApplication "$OUTPUTDIR/$APP_NAME.app" -o "$OUTPUTDIR/$APP_NAME.ipa" -sign "$DEVELOPER_NAME" -embed "$PROVISIONING_PROFILE"
 zip -r -9 "$OUTPUTDIR/$APP_NAME.app.dSYM.zip" "$OUTPUTDIR/$APP_NAME.app.dSYM"
 
+echo "***********************************"
+echo "*    Uploading To Crashlytics     *"
+echo "***********************************"
+
+${PODS_ROOT}/Crashlytics/submit 0c31dbdd91674d7e38c2970702a8ed1296c2b427 60c8c37aabf092fb185bb414226b3c778eb2f32c630ce3584780de36c08014e5 -ipaPath "$OUTPUTDIR/$APP_NAME.ipa"
+
 echo "********************"
 echo "*    Uploading     *"
 echo "********************"
