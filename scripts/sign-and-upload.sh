@@ -24,7 +24,7 @@ echo "***********************************"
 echo "*    Uploading To Crashlytics     *"
 echo "***********************************"
 
-${PODS_ROOT}/Crashlytics/submit 0c31dbdd91674d7e38c2970702a8ed1296c2b427 60c8c37aabf092fb185bb414226b3c778eb2f32c630ce3584780de36c08014e5 -ipaPath "$OUTPUTDIR/$APP_NAME.ipa"
+Pods/Crashlytics/submit 0c31dbdd91674d7e38c2970702a8ed1296c2b427 60c8c37aabf092fb185bb414226b3c778eb2f32c630ce3584780de36c08014e5 -ipaPath "$OUTPUTDIR/$APP_NAME.ipa"
 
 echo "********************"
 echo "*    Uploading     *"
