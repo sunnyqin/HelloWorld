@@ -119,6 +119,7 @@
 				60C16C99FE6FD3A30E1F7D72 /* [CP] Embed Pods Frameworks */,
 				7B1B7C567F3D17E8E429EEC7 /* [CP] Copy Pods Resources */,
 				E990D36B1D47397800A3A499 /* ShellScript */,
+				E9EC59E31D4843E900A52938 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -233,6 +234,19 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "echo \"Running Crashlytics (${CONFIGURATION})\"\n\"${PODS_ROOT}/Fabric/run\" ${MY_CRASHLYTICS_API_KEY} ${MY_CRASHLYTICS_BUILD_SECRET}";
+		};
+		E9EC59E31D4843E900A52938 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "${SOURCE_ROOT}/Crashlytics.framework/submit ${MY_CRASHLYTICS_API_KEY} ${MY_CRASHLYTICS_BUILD_SECRET}";
 		};
 /* End PBXShellScriptBuildPhase section */
 
