@@ -1,8 +1,31 @@
-language: objective-c  
+language: objective-c
+before_script:
+- "./scripts/add-key.sh"
+- openssl aes-256-cbc -k "$ENCRYPTION_SECRET" -in scripts/profile/helloworld_inhouse.mobileprovision.enc
+  -d -a -out scripts/profile/helloworld_inhouse.mobileprovision
+- openssl aes-256-cbc -k "$ENCRYPTION_SECRET" -in scripts/certs/dist.cer.enc -d -a
+  -out scripts/certs/dist.cer
+- openssl aes-256-cbc -k "$ENCRYPTION_SECRET" -in scripts/certs/dist.p12.enc -d -a
+  -out scripts/certs/dist.p12
 script:
-  - xctool -workspace HelloWorld.xcworkspace -scheme HelloWorld -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
-  - xctool test -workspace HelloWorld.xcworkspace -scheme HelloWorldTests -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
-osx_image: xcode7.3 
-xcode_workspace: HelloWorld.xcworkspace 
-xcode_scheme: HelloWorld 
-xcode_sdk: iphonesimulator9.3 
+- xctool -workspace HelloWorld.xcworkspace -scheme HelloWorld -sdk iphonesimulator
+  ONLY_ACTIVE_ARCH=NO
+- xctool test -workspace HelloWorld.xcworkspace -scheme HelloWorldTests -sdk iphonesimulator
+  ONLY_ACTIVE_ARCH=NO
+after_success:
+- "./scripts/sign-and-upload.sh"
+after_script:
+- "./scripts/remove-key.sh"
+osx_image: xcode7.3
+xcode_workspace: HelloWorld.xcworkspace
+xcode_scheme: HelloWorld
+xcode_sdk: iphonesimulator9.3
+env:
+  global:
+  - APP_NAME="HelloWorld"
+  - 'DEVELOPER_NAME="iPhone Distribution: Interactive Labs, Inc."'
+  - PROFILE_NAME="helloworld_inhouse"
+  - secure: pdy0BRfFrfi7b1RuG69EpAf2PYoZyfdKJNsrXgYD06jXTCsYYR9OtkZPp0mSQwa7AClFOMuxdGIF7fgjD1BkSt4/ABkrDX8yZPZIoIU0owL7a1Jjo7DPXDcTZTD5xJcOvl67M0HTzF6r/lcUBlBQnXbWHQcDhqJct2Ig80GOIijx+gUZvzoTaPOa+c2sEs3b5nxN9fZi6VGpVUHticUwxayPzS4roWXriLB5DZ+fIzYk8TxwUAPcNwy4rrqCeSRc64tC6VnLrfX/Bgk8obQnYaN8Q7FOBsQUHsOxMHZBtXpDntvT+csiRVaq2aT6tlu7651jNIG4ItPcDjuycZhkiA6QFJWMTxkGSjD23YfocK8p5UDdTYDJix0uMSFkEcPbJWaPIddGYZ9aCdzSQUvOeJ8aJW8RIjAyuE/QGL3O6+h4pO03gKQKvpTOehTnZOpWqm9Z+TiPAEwSkDH7fg8QzNF8IGNdmaTsLLX/4/LNjDXovJ4Z3RKzTHBgUJPrKmL+PXQIgndXz5XEVSYEhDPD0SqIxzLdjaGg/Mch32/FjkNyAUwOYqI253Rx3zZBQ0L4S+2r7Mk+5YOYBWW4CTGzlv55WpIjsuC5MFmx5XJkZ4UOTTaBUeQZR0WxGygzn9zlCMF1NtFuOstmFPd9K+gz/cbaMuOVPA6ky1h0Fz3kfmM=
+  - secure: hcTXHzjTQFArGqVbEkCd7GJ8cNHLO8qRnEtz0sfHyLxkjMAhOPAkBeH9bX/hSMIuvH6TlJVqBQcEHtHdt40BlT+DRTAThMLStb41IawpWIIwvoZLt+VHVGtXSVkcpj6BxM4PLYSVBylD8MNk2AELpGseksm2M78t/xBLuzr0mb2Ae6PTOVv9A8WqahWMZOOGghunjWLK8iCQ25Zc0Z+OuM/6P67wqLECtZ/KeMhNn9k4w1yt0c29/BIo9Aux0jTirhqArLWFeZkMAXocliTEIhHrIfAKdMxuY+WCPWBKcxZWDfVHdxZm+g/RtYhFcbbMrSS+fs7JDQeM2ReqPtpAI4dDCDGeHSRs/PUE07GDfHCfDubxrQTPyfTCqCR8uxlttoE3HbwQAq22cmmMoFlh3AwWsT1HG5eyMQUSYrmCBAS7X0rCFFmiEy2F9iFf3l84CaSXrmFOWMmHwFXYf1fYMLR2hhhK8C2yLueeXcxtsvpx7xOVtHw28JT+ZeloxvSJNnlByMeGbX0Sy9f+sJ2CJUfQB4OyvYYbmv9Atq9QNV+dFcqqujVM3cXwPNeqj+ud+oBasE3d7F+P71wcXYFAm6bSLqF8lWeXDEIYbRC0YPZK4ty1/iC+gpBx+GT5ns58N0l8pj65grLS9Vc4QwbHJBc4jCO74CUHGiDI97hg+7o=
+  - secure: UztpCh2Z3y8BS0ywj2P8RvQYK9MhnEf5zZBoLrfQspSjdH8IJp9f9UzcZ33PTOOWEYSV/n2TkxCLZD4MxmuDCZyswCMMpvXLAInEFd/EA7FDyU/iIKQaLU9cEyAAJ4CweDCgObJDCWvAuIf43VzmchB66F0+YwXXEZOg3PT3bg+rKp/YNFauG8nzunButUFfbcW8QHvK0kV7qLdn5vRZOg/tr1PZodc7hjhs5ej3JJhPLfd6uRsugImcXVU0QWFaOtZ67nGh6QG53WacMcclbtLm9cPAImrw+hEWP1WNv9U9PII3nSC7ll5wt+Sa7xyDpEuG8V2xZrDMpCwJ60tVjsF6bXhnaQEgS68qd1LRNJ67ciVqYOJK5nXHbf4F+0WaK+7ro7+AcnCqFb9rYQWbgA9gY31R/105RZ5Ln+W3INyxpvYfVjKEiiX8z9ZOl8VkLc+d6GiOtOT9wz/tRDa10slx1ElPNeOOiwGyO6blP0aNaWX0YRdizJG42TJm3rnlRiY70feGDf2w/fy5ougKDxncQ37JI/C1Pgjtzjl3ptksSUd+kcrdZ9lXNF7k++K5JbwdKz5r+AslofdHmVJKs4W9UFSPn9PkxROJFdkjyycXw1g7Eq7H90GiExznBs4dGX5O5czkr921aNLB0rmtm2EUJ9/3g0I8CS93X1sgrao=
+  - secure: dFTqCfhwJcVWQ7ex5z1d+BjQXiOmwI/K/TGu2M9o8aE/ZL9gy0QH/EfkupQu1otsqb7sT1vlFcQmrXAaUAX/hODrkoUv0WrOSLHcTjm91GFnMoTAfMLcYeiHV74ASEpVSX0eHtjSJk/Peqz3OdWsGkBt0h4pmQO0Hulf/aYc48IEh/GIFSQBV0FcHd8dxsjA8BCavtBVWZoUei3eM9CoR2DR9tVMBHiOHAWIUTMR/44LELhB15Z8wSxvFX5K0r/O76nYfccGvL9jTEWusOO0MJwA/UBO+NA155/8zvz4/okkps8BhCnW4p54rmjPI2EswOwU99TA/2OeVdz0BBQxaDz+d5lXjdtl88ufnmX1c7nZqEDPH+v+kBR+AeDhZI+nEXGPHRxOgyUJaidZN19dle0lz+enXunmXVp7TIV/TMlMTgmzYzT/BUwsrfGMquchK+jka0oz61lP6M5aRvuObNBQRJa/eJ76E+VJBjbsp9EmAtljhuE9iwOEqhtWE0SllbbDY92+hKVAlZt6T0LakcEXctsfeM07PNrG7+W/GMv/ihq0HFLJ51s2y9bwvtWI1TKfu4OGW6SMi8KlYbLU53LKdWSJXmmHtYaT2jtYXFbuxuv9U6Z0YUK7vohxnKxDKjN4hLwjYSJgoqFfwoj78paOOP8mkon0C03KrfydYlE=
