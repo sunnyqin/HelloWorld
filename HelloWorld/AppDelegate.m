@@ -20,7 +20,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 	// Override point for customization after application launch.
 	[Fabric with:@[[Crashlytics sharedInstance]]];
-	NSLog(@"tesT");
+	NSLog(@"test");
 	return YES;
 }
 
