@@ -4,8 +4,6 @@ before_script:
 script:
 - xctool -workspace HelloWorld.xcworkspace -scheme HelloWorld -sdk iphonesimulator
   ONLY_ACTIVE_ARCH=NO
-- xctool test -workspace HelloWorld.xcworkspace -scheme HelloWorldTests -sdk iphonesimulator
-  ONLY_ACTIVE_ARCH=NO
 after_success:
 - ./scripts/sign-and-upload.sh
 after_script:
