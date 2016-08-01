@@ -9,4 +9,8 @@ if [[ "$TRAVIS_BRANCH" != "master" ]]; then
   exit 0
 fi
 
-fastlane ios beta
+echo "********************"
+echo "*    fastlane      *"
+echo "********************"
+
+fastlane beta
