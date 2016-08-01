@@ -2,7 +2,7 @@ language: objective-c
 before_install:
 - chmod +x fastlane/travis.sh
 before_script:
-- openssl aes-256-cbc -k $ENCRYPTION_PASSWORD -in fastlane/Certificates/distribution.p12.enc
+- openssl aes-256-cbc -k $ENCRYPT_PASSWORD -in fastlane/Certificates/distribution.p12.enc
   -d -a -out fastlane/Certificates/distribution.p12
 script:
 - "./fastlane/travis.sh"
