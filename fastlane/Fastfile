@@ -31,12 +31,9 @@ platform :ios do
   desc "This will also make sure the profile is up to date"
   lane :beta do
     keychain_name = "ci-example-certs"
-
-	create_keychain(
-     name: keychain_name,
-     default_keychain: false,
-     unlock: true,
-     timeout: 3600,
+    
+    unlock_keychain(
+     path: keychain_name,
      password: SecureRandom.base64
     )
 
