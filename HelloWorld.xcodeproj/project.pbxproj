@@ -14,16 +14,6 @@
 		E91A5A6F1D472D1500E8328B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E91A5A6D1D472D1500E8328B /* Main.storyboard */; };
 		E91A5A711D472D1500E8328B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E91A5A701D472D1500E8328B /* Assets.xcassets */; };
 		E91A5A741D472D1500E8328B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E91A5A721D472D1500E8328B /* LaunchScreen.storyboard */; };
-		E9EC59EE1D4869F500A52938 /* add-key.sh in Resources */ = {isa = PBXBuildFile; fileRef = E9EC59E51D4869F500A52938 /* add-key.sh */; };
-		E9EC59EF1D4869F500A52938 /* Apple.cer in Resources */ = {isa = PBXBuildFile; fileRef = E9EC59E71D4869F500A52938 /* Apple.cer */; };
-		E9EC59F01D4869F500A52938 /* dist.cer.enc in Resources */ = {isa = PBXBuildFile; fileRef = E9EC59E81D4869F500A52938 /* dist.cer.enc */; };
-		E9EC59F11D4869F500A52938 /* dist.p12.enc in Resources */ = {isa = PBXBuildFile; fileRef = E9EC59E91D4869F500A52938 /* dist.p12.enc */; };
-		E9EC59F21D4869F500A52938 /* helloworld_inhouse.mobileprovision.enc in Resources */ = {isa = PBXBuildFile; fileRef = E9EC59EB1D4869F500A52938 /* helloworld_inhouse.mobileprovision.enc */; };
-		E9EC59F31D4869F500A52938 /* remove-key.sh in Resources */ = {isa = PBXBuildFile; fileRef = E9EC59EC1D4869F500A52938 /* remove-key.sh */; };
-		E9EC59F41D4869F500A52938 /* sign-and-upload.sh in Resources */ = {isa = PBXBuildFile; fileRef = E9EC59ED1D4869F500A52938 /* sign-and-upload.sh */; };
-		E9EC59F71D4871CC00A52938 /* dist.cer in Resources */ = {isa = PBXBuildFile; fileRef = E9EC59F51D4871CC00A52938 /* dist.cer */; };
-		E9EC59F81D4871CC00A52938 /* dist.p12 in Resources */ = {isa = PBXBuildFile; fileRef = E9EC59F61D4871CC00A52938 /* dist.p12 */; };
-		E9EC59FA1D4871D300A52938 /* helloworld_inhouse.mobileprovision in Resources */ = {isa = PBXBuildFile; fileRef = E9EC59F91D4871D300A52938 /* helloworld_inhouse.mobileprovision */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,16 +31,6 @@
 		E91A5A701D472D1500E8328B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E91A5A731D472D1500E8328B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E91A5A751D472D1500E8328B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E9EC59E51D4869F500A52938 /* add-key.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "add-key.sh"; sourceTree = "<group>"; };
-		E9EC59E71D4869F500A52938 /* Apple.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = Apple.cer; sourceTree = "<group>"; };
-		E9EC59E81D4869F500A52938 /* dist.cer.enc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dist.cer.enc; sourceTree = "<group>"; };
-		E9EC59E91D4869F500A52938 /* dist.p12.enc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dist.p12.enc; sourceTree = "<group>"; };
-		E9EC59EB1D4869F500A52938 /* helloworld_inhouse.mobileprovision.enc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = helloworld_inhouse.mobileprovision.enc; sourceTree = "<group>"; };
-		E9EC59EC1D4869F500A52938 /* remove-key.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "remove-key.sh"; sourceTree = "<group>"; };
-		E9EC59ED1D4869F500A52938 /* sign-and-upload.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "sign-and-upload.sh"; sourceTree = "<group>"; };
-		E9EC59F51D4871CC00A52938 /* dist.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = dist.cer; sourceTree = "<group>"; };
-		E9EC59F61D4871CC00A52938 /* dist.p12 */ = {isa = PBXFileReference; lastKnownFileType = file; path = dist.p12; sourceTree = "<group>"; };
-		E9EC59F91D4871D300A52938 /* helloworld_inhouse.mobileprovision */ = {isa = PBXFileReference; lastKnownFileType = file; path = helloworld_inhouse.mobileprovision; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,7 +58,6 @@
 		E91A5A581D472D1500E8328B = {
 			isa = PBXGroup;
 			children = (
-				E9EC59E41D4869F500A52938 /* scripts */,
 				E91A5A631D472D1500E8328B /* HelloWorld */,
 				E91A5A621D472D1500E8328B /* Products */,
 				21EF21FAA483451E1ACABD22 /* Pods */,
@@ -116,39 +95,6 @@
 				E91A5A651D472D1500E8328B /* main.m */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		E9EC59E41D4869F500A52938 /* scripts */ = {
-			isa = PBXGroup;
-			children = (
-				E9EC59E51D4869F500A52938 /* add-key.sh */,
-				E9EC59E61D4869F500A52938 /* certs */,
-				E9EC59EA1D4869F500A52938 /* profile */,
-				E9EC59EC1D4869F500A52938 /* remove-key.sh */,
-				E9EC59ED1D4869F500A52938 /* sign-and-upload.sh */,
-			);
-			path = scripts;
-			sourceTree = "<group>";
-		};
-		E9EC59E61D4869F500A52938 /* certs */ = {
-			isa = PBXGroup;
-			children = (
-				E9EC59F51D4871CC00A52938 /* dist.cer */,
-				E9EC59F61D4871CC00A52938 /* dist.p12 */,
-				E9EC59E71D4869F500A52938 /* Apple.cer */,
-				E9EC59E81D4869F500A52938 /* dist.cer.enc */,
-				E9EC59E91D4869F500A52938 /* dist.p12.enc */,
-			);
-			path = certs;
-			sourceTree = "<group>";
-		};
-		E9EC59EA1D4869F500A52938 /* profile */ = {
-			isa = PBXGroup;
-			children = (
-				E9EC59F91D4871D300A52938 /* helloworld_inhouse.mobileprovision */,
-				E9EC59EB1D4869F500A52938 /* helloworld_inhouse.mobileprovision.enc */,
-			);
-			path = profile;
 			sourceTree = "<group>";
 		};
 		F6773DA5D583B8A1A2C1EB41 /* Frameworks */ = {
@@ -221,19 +167,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E9EC59EF1D4869F500A52938 /* Apple.cer in Resources */,
 				E91A5A741D472D1500E8328B /* LaunchScreen.storyboard in Resources */,
-				E9EC59F01D4869F500A52938 /* dist.cer.enc in Resources */,
-				E9EC59F71D4871CC00A52938 /* dist.cer in Resources */,
-				E9EC59F31D4869F500A52938 /* remove-key.sh in Resources */,
-				E9EC59F41D4869F500A52938 /* sign-and-upload.sh in Resources */,
-				E9EC59F11D4869F500A52938 /* dist.p12.enc in Resources */,
 				E91A5A711D472D1500E8328B /* Assets.xcassets in Resources */,
-				E9EC59EE1D4869F500A52938 /* add-key.sh in Resources */,
-				E9EC59FA1D4871D300A52938 /* helloworld_inhouse.mobileprovision in Resources */,
-				E9EC59F81D4871CC00A52938 /* dist.p12 in Resources */,
 				E91A5A6F1D472D1500E8328B /* Main.storyboard in Resources */,
-				E9EC59F21D4869F500A52938 /* helloworld_inhouse.mobileprovision.enc in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

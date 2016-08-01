@@ -44,7 +44,7 @@ platform :ios do
     # Import distribution certificate
     import_certificate(
      certificate_path: "fastlane/Certificates/distribution.p12",
-     certificate_password: "123456",
+     certificate_password: ENV["KEY_PASSWORD"],
      keychain_name: keychain_name
     )
 
