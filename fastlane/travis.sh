@@ -16,4 +16,6 @@ echo "********************"
 # Travis fetches a shallow clone. We use commit count until HEAD for build number. In order to assure that the count is correct we have to `unshallow` Travis' clone.
 git fetch --unshallow
 
+gem update fastlane
+
 fastlane beta
