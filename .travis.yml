@@ -3,16 +3,15 @@ before_install:
 - chmod +x scripts/add-key.sh
 - chmod +x scripts/sign-and-upload.sh
 - chmod +x scripts/remove-key.sh
+- chmod +x scripts/fastlane.sh
 before_script:
-- "./scripts/add-key.sh"
 script:
 - xctool -workspace HelloWorld.xcworkspace -scheme HelloWorld -sdk iphoneos -configuration
   Release OBJROOT=$PWD/build SYMROOT=$PWD/build ONLY_ACTIVE_ARCH=NO CODE_SIGN_IDENTITY=""
   CODE_SIGNING_REQUIRED=NO 'CODE_SIGN_RESOURCE_RULES_PATH=$(SDKROOT)/ResourceRules.plist'
 after_success:
-- "./scripts/sign-and-upload.sh"
+- "./script/fastlane.sh"
 after_script:
-- "./scripts/remove-key.sh"
 osx_image: xcode7.3
 xcode_workspace: HelloWorld.xcworkspace
 xcode_scheme: HelloWorld

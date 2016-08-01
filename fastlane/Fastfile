@@ -1,0 +1,108 @@
+# Customise this file, documentation can be found here:
+# https://github.com/fastlane/fastlane/tree/master/fastlane/docs
+# All available actions: https://github.com/fastlane/fastlane/blob/master/fastlane/docs/Actions.md
+# can also be listed using the `fastlane actions` command
+
+# Change the syntax highlighting to Ruby
+# All lines starting with a # are ignored when running `fastlane`
+
+# If you want to automatically update fastlane if a new version is available:
+# update_fastlane
+
+# This is the minimum version number required.
+# Update this, if you use features of a newer version
+fastlane_version "1.99.0"
+
+default_platform :ios
+
+platform :ios do
+  before_all do
+    # ENV["SLACK_URL"] = "https://hooks.slack.com/services/..."
+    cocoapods
+    
+  end
+
+  desc "Runs all the tests"
+  lane :test do
+    scan
+  end
+
+  desc "Submit a new Beta Build to Crashlytics"
+  desc "This will also make sure the profile is up to date"
+  lane :beta do
+    keychain_name = "ci-example-certs"
+
+	create_keychain(
+     name: keychain_name,
+     default_keychain: true,
+     unlock: true,
+     timeout: 3600,
+     lock_when_sleeps: true,
+     password: SecureRandom.base64
+    )
+
+    # Import distribution certificate
+    import_certificate(
+     certificate_path: "fastlane/Certificates/distribution.p12",
+     certificate_password: 123456,
+     keychain_name: keychain_name
+    )
+
+    # Fetch provisioning profile
+     sigh(
+      adhoc: false, 
+      username: "steve+iosenterprise@interactivelabs.co",
+      team_id: "6AM6RAJ294",
+      provisioning_name: "helloworld_inhouse",
+      cert_id: "QMKHN2RJG9"
+     )
+
+   increment_build_number(build_number: number_of_commits)
+
+   # Build
+    gym(
+      configuration: "Release",
+      sdk: "iphoneos9.3",
+      clean: true,
+      include_bitcode: false,
+      include_symbols: true,
+      use_legacy_build_api: true,
+      export_method: "enterprise"
+    )
+    
+    # Post to Crashlytics
+    crashlytics(
+      api_token: "0c31dbdd91674d7e38c2970702a8ed1296c2b427",
+      build_secret: "60c8c37aabf092fb185bb414226b3c778eb2f32c630ce3584780de36c08014e5",
+      notes: "Automatic iOS Build"
+    )
+
+   delete_keychain(
+     name: keychain_name
+   )
+ end
+
+  # You can define as many lanes as you want
+
+  after_all do |lane|
+    # This block is called, only if the executed lane was successful
+
+    # slack(
+    #   message: "Successfully deployed new App Update."
+    # )
+  end
+
+  error do |lane, exception|
+    # slack(
+    #   message: exception.message,
+    #   success: false
+    # )
+  end
+end
+
+
+# More information about multiple platforms in fastlane: https://github.com/fastlane/fastlane/blob/master/fastlane/docs/Platforms.md
+# All available actions: https://github.com/fastlane/fastlane/blob/master/fastlane/docs/Actions.md
+
+# fastlane reports which actions are used
+# No personal data is recorded. Learn more at https://github.com/fastlane/enhancer
