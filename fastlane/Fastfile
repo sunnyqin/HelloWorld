@@ -57,8 +57,6 @@ platform :ios do
       cert_id: "QMKHN2RJG9"
      )
 
-   increment_build_number(build_number: number_of_commits)
-
    # Build
     gym(
       configuration: "Release",
