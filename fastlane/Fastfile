@@ -65,7 +65,8 @@ platform :ios do
       include_symbols: true,
       use_legacy_build_api: true,
       export_method: "enterprise",
-      scheme: "HelloWorld"
+      scheme: "HelloWorld",
+      codesigning_identity: "iPhone Distribution: Interactive Labs, Inc."
     )
     
     # Post to Crashlytics
