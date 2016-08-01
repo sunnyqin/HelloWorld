@@ -30,15 +30,22 @@ platform :ios do
   desc "Submit a new Beta Build to Crashlytics"
   desc "This will also make sure the profile is up to date"
   lane :beta do
-    keychain_name = "ci-example-certs"
+    keychain_name = "ios-build"
     
      create_keychain(
      name: keychain_name,
      default_keychain: false,
      unlock: true,
      timeout: 3600,
-     password: SecureRandom.base64
+     password: "travis"
     )
+    
+    # Unlock the keychain
+	security unlock-keychain -p travis ios-build.keychain
+
+	# Set keychain timeout to 1 hour for long builds
+	# see http://www.egeek.me/2013/02/23/jenkins-and-xcode-user-interaction-is-not-allowed/
+	security set-keychain-settings -t 3600 -l ~/Library/Keychains/ios-build.keychain
 
 
     # Import distribution certificate
