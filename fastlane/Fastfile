@@ -32,10 +32,14 @@ platform :ios do
   lane :beta do
     keychain_name = "ci-example-certs"
     
-    unlock_keychain(
-     path: keychain_name,
+     create_keychain(
+     name: keychain_name,
+     default_keychain: false,
+     unlock: true,
+     timeout: 3600,
      password: SecureRandom.base64
     )
+
 
     # Import distribution certificate
     import_certificate(
