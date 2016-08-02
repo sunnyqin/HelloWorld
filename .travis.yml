@@ -7,6 +7,7 @@ before_script:
   -d -a -out fastlane/Certificates/distribution.p12
 script:
 - pod --version
+- pod install
 - "./fastlane/travis.sh"
 after_success: 
 after_script: 
