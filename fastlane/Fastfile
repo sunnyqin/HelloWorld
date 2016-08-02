@@ -61,7 +61,7 @@ platform :ios do
 
    # Build
     gym(
-      configuration: "Beta",
+      configuration: "Release",
       sdk: "iphoneos9.3",
       clean: true,
       include_bitcode: false,
