@@ -21,7 +21,7 @@
 		296CC960C9B6AE9B8A33F1E3 /* Pods_HelloWorld.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HelloWorld.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C6D8B1CB219119F81BE2697 /* Pods-HelloWorld.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HelloWorld.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HelloWorld/Pods-HelloWorld.debug.xcconfig"; sourceTree = "<group>"; };
 		B7EA003C8FCE60AC00601D0B /* Pods-HelloWorld.beta.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HelloWorld.beta.xcconfig"; path = "Pods/Target Support Files/Pods-HelloWorld/Pods-HelloWorld.beta.xcconfig"; sourceTree = "<group>"; };
-		E91A5A611D472D1500E8328B /* HelloWorld.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelloWorld.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E91A5A611D472D1500E8328B /* HelloWorld-beta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HelloWorld-beta.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E91A5A651D472D1500E8328B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E91A5A671D472D1500E8328B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E91A5A681D472D1500E8328B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -68,7 +68,7 @@
 		E91A5A621D472D1500E8328B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E91A5A611D472D1500E8328B /* HelloWorld.app */,
+				E91A5A611D472D1500E8328B /* HelloWorld-beta.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -126,7 +126,7 @@
 			);
 			name = HelloWorld;
 			productName = HelloWorld;
-			productReference = E91A5A611D472D1500E8328B /* HelloWorld.app */;
+			productReference = E91A5A611D472D1500E8328B /* HelloWorld-beta.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -363,9 +363,9 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MY_CRASHLYTICS_API_KEY = d1735a5902bb0852d662b1917c4f691cfc391c5c;
 				MY_CRASHLYTICS_BUILD_SECRET = 2fa52a54d0c2cbf8b079374579123798cba998c9e2a441ba7e95b79c542d99ae;
-				PRODUCT_BUNDLE_IDENTIFIER = co.ilabs.HelloWorld;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "a80d16df-c1bc-453b-aea3-c9440c50aabb";
+				PRODUCT_BUNDLE_IDENTIFIER = "co.ilabs.HelloWorld-beta";
+				PRODUCT_NAME = "$(TARGET_NAME)-beta";
+				PROVISIONING_PROFILE = "59f87e3d-279a-482b-9401-360c51216dd8";
 			};
 			name = Debug;
 		};
@@ -383,7 +383,7 @@
 				MY_CRASHLYTICS_BUILD_SECRET = 60c8c37aabf092fb185bb414226b3c778eb2f32c630ce3584780de36c08014e5;
 				PRODUCT_BUNDLE_IDENTIFIER = co.ilabs.HelloWorld;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "a80d16df-c1bc-453b-aea3-c9440c50aabb";
+				PROVISIONING_PROFILE = "59f87e3d-279a-482b-9401-360c51216dd8";
 			};
 			name = Release;
 		};
@@ -437,9 +437,9 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MY_CRASHLYTICS_API_KEY = d1735a5902bb0852d662b1917c4f691cfc391c5c;
 				MY_CRASHLYTICS_BUILD_SECRET = 2fa52a54d0c2cbf8b079374579123798cba998c9e2a441ba7e95b79c542d99ae;
-				PRODUCT_BUNDLE_IDENTIFIER = co.ilabs.HelloWorld;
+				PRODUCT_BUNDLE_IDENTIFIER = "co.ilabs.HelloWorld-beta";
 				PRODUCT_NAME = "$(TARGET_NAME)-beta";
-				PROVISIONING_PROFILE = "a80d16df-c1bc-453b-aea3-c9440c50aabb";
+				PROVISIONING_PROFILE = "59f87e3d-279a-482b-9401-360c51216dd8";
 			};
 			name = Beta;
 		};
