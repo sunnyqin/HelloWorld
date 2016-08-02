@@ -1,4 +1,5 @@
 language: objective-c
+cache: cocoapods
 before_install:
 - chmod +x fastlane/travis.sh
 before_script:
