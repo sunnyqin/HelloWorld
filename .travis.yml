@@ -6,6 +6,7 @@ before_script:
 - openssl aes-256-cbc -k $ENCRYPT_PASSWORD -in fastlane/Certificates/distribution.p12.enc
   -d -a -out fastlane/Certificates/distribution.p12
 script:
+- pod --version
 - "./fastlane/travis.sh"
 after_success: 
 after_script: 
