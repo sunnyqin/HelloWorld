@@ -387,6 +387,62 @@
 			};
 			name = Release;
 		};
+		E9380A321D50C97800840DDD /* Staging */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Staging;
+		};
+		E9380A331D50C97800840DDD /* Staging */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 17F8C886244813D829A14EF6 /* Pods-HelloWorld.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_RESOURCE_RULES_PATH = "$(SDKROOT)/ResourceRules.plist";
+				INFOPLIST_FILE = HelloWorld/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MY_CRASHLYTICS_API_KEY = 0c31dbdd91674d7e38c2970702a8ed1296c2b427;
+				MY_CRASHLYTICS_BUILD_SECRET = 60c8c37aabf092fb185bb414226b3c778eb2f32c630ce3584780de36c08014e5;
+				PRODUCT_BUNDLE_IDENTIFIER = co.ilabs.HelloWorld;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Staging;
+		};
 		E990D36C1D474D1800A3A499 /* Beta */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -451,6 +507,7 @@
 			buildConfigurations = (
 				E91A5A761D472D1500E8328B /* Debug */,
 				E91A5A771D472D1500E8328B /* Release */,
+				E9380A321D50C97800840DDD /* Staging */,
 				E990D36C1D474D1800A3A499 /* Beta */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -461,6 +518,7 @@
 			buildConfigurations = (
 				E91A5A791D472D1500E8328B /* Debug */,
 				E91A5A7A1D472D1500E8328B /* Release */,
+				E9380A331D50C97800840DDD /* Staging */,
 				E990D36D1D474D1800A3A499 /* Beta */,
 			);
 			defaultConfigurationIsVisible = 0;
